@@ -9,8 +9,7 @@ module.exports.statement = function (invoice, plays) {
   }).format;
   for (let perf of invoice.performances) {
     const play = plays[perf.playID];
-    let thisAmount = 0;
-    thisAmount = amountFor(play, thisAmount, perf);
+    let thisAmount = amountFor(play, perf);
     // add volume credits
     volumeCredits += Math.max(perf.audience - 30, 0);
     // add extra credit for every ten comedy attendees
@@ -26,7 +25,8 @@ module.exports.statement = function (invoice, plays) {
   return result;
 };
 
-function amountFor(play, thisAmount, perf) {
+function amountFor(play, perf) {
+  let thisAmount = 0;
   switch (play.type) {
     case "tragedy":
       thisAmount = 40000;
