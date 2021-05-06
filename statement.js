@@ -6,8 +6,7 @@ module.exports.statement = function (invoice, plays) {
       perf.audience
     } seats)\n`;
   }
-  let totalAmount = newFunction();
-  result += `Amount owed is ${usd(totalAmount)}\n`;
+  result += `Amount owed is ${usd(newFunction())}\n`;
   result += `You earned ${totalVolumeCredits()} credits\n`;
   return result;
 
