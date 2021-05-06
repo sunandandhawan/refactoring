@@ -2,11 +2,6 @@ module.exports.statement = function (invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
   let result = `Statement for ${invoice.customer}\n`;
-  const format = new Intl.NumberFormat("enUS", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-  }).format;
   for (let perf of invoice.performances) {
     volumeCredits += vaolumeCreditsFor(perf);
     // print line for this order
@@ -51,5 +46,13 @@ module.exports.statement = function (invoice, plays) {
     if ("comedy" === playFor(aPerformance).type)
       result += Math.floor(aPerformance.audience / 5);
     return result;
+  }
+
+  function format(aNumber) {
+    return new Intl.NumberFormat("enUS", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+    }).format(aNumber);
   }
 };
