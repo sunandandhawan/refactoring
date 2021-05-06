@@ -6,10 +6,7 @@ module.exports.statement = function (invoice, plays) {
       perf.audience
     } seats)\n`;
   }
-  let totalAmount = 0;
-  for (let perf of invoice.performances) {
-    totalAmount += amountFor(perf);
-  }
+  let totalAmount = newFunction(invoice, amountFor);
   result += `Amount owed is ${usd(totalAmount)}\n`;
   result += `You earned ${totalVolumeCredits()} credits\n`;
   return result;
@@ -62,5 +59,13 @@ module.exports.statement = function (invoice, plays) {
       result += volumeCreditsFor(perf);
     }
     return result;
+  }
+
+  function newFunction() {
+    let totalAmount = 0;
+    for (let perf of invoice.performances) {
+      totalAmount += amountFor(perf);
+    }
+    return totalAmount;
   }
 };
