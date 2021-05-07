@@ -72,7 +72,7 @@ function renderPlainText(data, plays) {
       perf.audience
     } seats)\n`;
   }
-  result += `Amount owed is ${usd(totalAmount())}\n`;
+  result += `Amount owed is ${usd(data.totalAmount)}\n`;
   result += `You earned ${data.totalVolumeCredits} credits\n`;
   return result;
 
