@@ -3,9 +3,14 @@ module.exports.statement = function (invoice, plays) {
   statementData.customer = invoice.customer;
   statementData.performances = invoice.performances.map(enrichPerformance);
   return renderPlainText(statementData, plays);
+
   function enrichPerformance(aPerformance) {
     const result = Object.assign({}, aPerformance);
     return result;
+  }
+
+  function playFor(aPerformance) {
+    return plays[aPerformance.playID];
   }
 };
 function renderPlainText(data, plays) {
@@ -18,6 +23,7 @@ function renderPlainText(data, plays) {
   result += `Amount owed is ${usd(totalAmount())}\n`;
   result += `You earned ${totalVolumeCredits()} credits\n`;
   return result;
+
   function playFor(aPerformance) {
     return plays[aPerformance.playID];
   }
