@@ -64,7 +64,7 @@ function renderPlainText(data, plays) {
     } seats)\n`;
   }
   result += `Amount owed is ${usd(totalAmount())}\n`;
-  result += `You earned ${totalVolumeCredits()} credits\n`;
+  result += `You earned ${data.totalVolumeCredits} credits\n`;
   return result;
 
   function usd(aNumber) {
