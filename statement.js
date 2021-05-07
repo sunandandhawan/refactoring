@@ -1,6 +1,7 @@
 module.exports.statement = function (invoice, plays) {
   return renderPlainText(createStatementData(invoice, plays));
 };
+
 function createStatementData(invoice, plays) {
   const statementData = {};
   statementData.customer = invoice.customer;
@@ -60,7 +61,7 @@ function createStatementData(invoice, plays) {
   }
 }
 
-function renderPlainText(data, plays) {
+function renderPlainText(data) {
   let result = `Statement for ${data.customer}\n`;
   for (let perf of data.performances) {
     result += ` ${perf.play.name}: ${usd(perf.amount)} (${
