@@ -40,7 +40,7 @@ module.exports.statement = function (invoice, plays) {
 function renderPlainText(data, plays) {
   let result = `Statement for ${data.customer}\n`;
   for (let perf of data.performances) {
-    result += ` ${perf.play.name}: ${usd(amountFor(perf))} (${
+    result += ` ${perf.play.name}: ${usd(perf.amount)} (${
       perf.audience
     } seats)\n`;
   }
@@ -97,7 +97,7 @@ function renderPlainText(data, plays) {
   function totalAmount() {
     let result = 0;
     for (let perf of data.performances) {
-      result += amountFor(perf);
+      result += perf.amount;
     }
     return result;
   }
