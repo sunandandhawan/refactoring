@@ -3,6 +3,7 @@ module.exports.statement = function (invoice, plays) {
   statementData.customer = invoice.customer;
   statementData.performances = invoice.performances.map(enrichPerformance);
   statementData.totalVolumeCredits = totalVolumeCredits(statementData);
+  statementData.totalAmount = totalAmount(statementData);
   return renderPlainText(statementData, plays);
 
   function enrichPerformance(aPerformance) {
@@ -55,7 +56,7 @@ module.exports.statement = function (invoice, plays) {
     return result;
   }
 
-  function totalAmount() {
+  function totalAmount(data) {
     let result = 0;
     for (let perf of data.performances) {
       result += perf.amount;
