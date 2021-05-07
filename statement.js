@@ -8,6 +8,7 @@ module.exports.statement = function (invoice, plays) {
     const result = Object.assign({}, aPerformance);
     result.play = playFor(result);
     result.amount = amountFor(result);
+    result.volumeCredits = volumeCreditsFor(result);
     return result;
   }
 
