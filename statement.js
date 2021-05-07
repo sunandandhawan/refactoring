@@ -83,12 +83,4 @@ function renderPlainText(data, plays) {
       minimumFractionDigits: 2,
     }).format(aNumber / 100);
   }
-
-  function totalAmount() {
-    let result = 0;
-    for (let perf of data.performances) {
-      result += perf.amount;
-    }
-    return result;
-  }
 }
