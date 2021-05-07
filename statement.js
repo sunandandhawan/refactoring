@@ -45,6 +45,14 @@ module.exports.statement = function (invoice, plays) {
       result += Math.floor(aPerformance.audience / 5);
     return result;
   }
+
+  function totalVolumeCredits() {
+    let result = 0;
+    for (let perf of data.performances) {
+      result += perf.volumeCredits;
+    }
+    return result;
+  }
 };
 
 function renderPlainText(data, plays) {
