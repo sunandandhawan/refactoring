@@ -36,6 +36,14 @@ module.exports.statement = function (invoice, plays) {
   function playFor(aPerformance) {
     return plays[aPerformance.playID];
   }
+
+  function volumeCreditsFor(aPerformance) {
+    let result = 0;
+    result += Math.max(aPerformance.audience - 30, 0);
+    if ("comedy" === aPerformance.play.type)
+      result += Math.floor(aPerformance.audience / 5);
+    return result;
+  }
 };
 function renderPlainText(data, plays) {
   let result = `Statement for ${data.customer}\n`;
