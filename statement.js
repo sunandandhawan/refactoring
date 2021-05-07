@@ -54,6 +54,14 @@ module.exports.statement = function (invoice, plays) {
     }
     return result;
   }
+
+  function totalAmount() {
+    let result = 0;
+    for (let perf of data.performances) {
+      result += perf.amount;
+    }
+    return result;
+  }
 };
 
 function renderPlainText(data, plays) {
