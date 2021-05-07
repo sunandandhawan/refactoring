@@ -6,7 +6,8 @@ module.exports.statement = function (invoice, plays) {
 
   function enrichPerformance(aPerformance) {
     const result = Object.assign({}, aPerformance);
-    result.play = playFor(aPerformance);
+    result.play = playFor(result);
+    result.amount = amountFor(result);
     return result;
   }
 
