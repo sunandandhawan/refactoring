@@ -25,7 +25,9 @@ function renderHtml(data) {
   result += "<table>\n";
   result += "  <tr><th>play</th><th>seats</th><th>cost</th></tr>\n";
   for (let perf of data.performances) {
-    result += `  <tr><td>${perf.play}</td><td>${perf.audience}</td><td>${perf.amount}</td></tr>\n`;
+    result += `  <tr><td>${perf.play.name}</td><td>${
+      perf.audience
+    }</td><td>${usd(perf.amount)}</td></tr>\n`;
   }
   result += "</table>\n";
   result += `<p>Amount owed is <em>${usd(data.totalAmount)}</em></p>\n`;
