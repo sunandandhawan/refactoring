@@ -1,4 +1,4 @@
-const PerformanceCalculator = require("./performance-calculator");
+const PerformanceCalculator = require("./performanceCalculator");
 
 module.exports.createStatementData = function (invoice, plays) {
   const statementData = {};
