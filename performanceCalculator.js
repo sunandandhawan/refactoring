@@ -3,7 +3,7 @@ module.exports = class PerformanceCalculator {
     this.performance = aPerformance;
     this.play = aPlay;
   }
-  get amountFor() {
+  get amount() {
     let result = 0;
     switch (this.play.type) {
       case "tragedy":
