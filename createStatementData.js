@@ -40,6 +40,8 @@ module.exports.createStatementData = function (invoice, plays) {
         return new TragedyCalculator(aPerformance, aPlay);
       case "comedy":
         return new ComedyCalculator(aPerformance, aPlay);
+      default:
+        return new Error(`unknown type: ${aPlay.type}`);
     }
   }
 };

@@ -5,18 +5,7 @@ module.exports = class PerformanceCalculator {
   }
 
   get amount() {
-    let result = 0;
-    switch (this.play.type) {
-      case "tragedy":
-        throw "bad thing";
-        break;
-      case "comedy":
-        throw "bad thing";
-        break;
-      default:
-        throw new Error(`unknown type: ${this.play.type}`);
-    }
-    return result;
+    throw new Error(`subclass responsibility`);
   }
 
   get volumeCredits() {
