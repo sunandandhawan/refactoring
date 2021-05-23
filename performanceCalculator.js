@@ -11,11 +11,7 @@ module.exports = class PerformanceCalculator {
         throw "bad thing";
         break;
       case "comedy":
-        result = 30000;
-        if (this.performance.audience > 20) {
-          result += 10000 + 500 * (this.performance.audience - 20);
-        }
-        result += 300 * this.performance.audience;
+        throw "bad thing";
         break;
       default:
         throw new Error(`unknown type: ${this.play.type}`);
