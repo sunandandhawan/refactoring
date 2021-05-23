@@ -1,4 +1,6 @@
+const ComedyCalculator = require("./comedyCalculator");
 const PerformanceCalculator = require("./performanceCalculator");
+const TragedyCalculator = require("./tragedyCalculator");
 
 module.exports.createStatementData = function (invoice, plays) {
   const statementData = {};
@@ -33,6 +35,11 @@ module.exports.createStatementData = function (invoice, plays) {
   }
 
   function createPerformanceCalculator(aPerformance, aPlay) {
-    return new PerformanceCalculator(aPerformance, aPlay);
+    switch (aPlay.type) {
+      case "tragedy":
+        return new TragedyCalculator(aPerformance, aPlay);
+      case "comedy":
+        return new ComedyCalculator(aPerformance, aPlay);
+    }
   }
 };
