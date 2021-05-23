@@ -4,7 +4,7 @@
   "description": "Practical of the example in first chapter of the Refactoring book (second edition) by Martin Fowler",
   "main": "index.js",
   "scripts": {
-    "test": "mocha *.spec.js"
+    "test": "mocha ./**/*.spec.js"
   },
   "repository": {
     "type": "git",
