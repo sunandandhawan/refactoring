@@ -10,3 +10,20 @@ see the effect on the production shortfall and profits. Whenever a user changes 
 number in the display, all the others update immediately.
 
 ![alt text](https://raw.githubusercontent.com/sunandandhawan/refactoring/master/chapter-4/images/example.png)
+
+## Tip
+
+Use `Run On Save` VS Code Extension by `pucelle` with following content in `.vscode/settings.json`
+
+```
+{
+  "runOnSave.statusMessageTimeout": 3000,
+  "runOnSave.commands": [
+    {
+      "match": ".*\\.ts$",
+      "command": "npm run test",
+      "runIn": "terminal"
+    }
+  ]
+}
+```

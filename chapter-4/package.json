@@ -1,0 +1,20 @@
+{
+  "name": "chapter-4",
+  "version": "1.0.0",
+  "description": "The production plan has a demand and price for each province. Each province has\r producers, each of which can produce a certain number of units at a particular price.\r The UI also shows how much revenue each producer would earn if they sell all their\r production. At the bottom, the screen shows the shortfall in production (the demand\r minus the total production) and the profit for this plan. The UI allows the user to\r manipulate the demand, price, and the individual producer’s production and costs to\r see the effect on the production shortfall and profits. Whenever a user changes any\r number in the display, all the others update immediately.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register ./**/*.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.4.3"
+  }
+}
