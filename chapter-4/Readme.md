@@ -11,6 +11,12 @@ number in the display, all the others update immediately.
 
 ![alt text](https://raw.githubusercontent.com/sunandandhawan/refactoring/master/chapter-4/images/example.png)
 
+### Calculations
+
+`full revenue` = `cost` _ `production`
+`shortfall` = `demand` - Sum of `production` of all Producers
+`profit` = (`price` _ Sum of `production` of all Producers) - Sum of `full revenue` of all Producers
+
 ## Tip
 
 Use `Run On Save` VS Code Extension by `pucelle` with following content in `.vscode/settings.json`
