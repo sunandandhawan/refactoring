@@ -13,9 +13,11 @@ number in the display, all the others update immediately.
 
 ### Calculations
 
-`full revenue` = `cost` _ `production`
+`full revenue` = `cost` \_ `production`
+
 `shortfall` = `demand` - Sum of `production` of all Producers
-`profit` = (`price` _ Sum of `production` of all Producers) - Sum of `full revenue` of all Producers
+
+`profit` = (`price` \_ Sum of `production` of all Producers) - Sum of `full revenue` of all Producers
 
 ## Tip
 
