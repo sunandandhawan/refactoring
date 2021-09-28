@@ -1,0 +1,21 @@
+<div><div><div>
+<h1>{{title}}</h1>
+<div *ngFor="let province of provinces">
+    <h2>Province: {{province.name}}</h2>
+    <label for="demand">demand:</label>
+    <input type="text" id="demand" [(ngModel)]="province.demand" />
+    <label for="price">price:</label>
+    <input type="text" id="price" [(ngModel)]="province.price" />
+    <div>{{province.producerCount}} producers:</div>
+    <div *ngFor="let producer of province.producers">
+      {{producer.name}}:
+      <label for="cost">cost:</label>
+      <input type="text" id="cost" [(ngModel)]="producer.cost" />
+      <label for="production">production:</label>
+      <input type="text" id="production" [(ngModel)]="producer.production" />
+      <label>full revenue: {{producer.fullRevenue}}</label>
+    </div>
+    <label>shortfall: {{province.shortfall}}</label>
+    <label>profit: {{province.profit}}</label>
+</div>
+</div></div></div>
