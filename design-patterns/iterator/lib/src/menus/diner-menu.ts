@@ -1,4 +1,6 @@
 import { MenuItem } from "./menu-item";
+import { Iterator } from "../interfaces";
+import { DinerMenuIterator } from "../iterators/diner-menu-iterator";
 
 export class DinerMenu {
   public menuItems: Set<MenuItem>;
@@ -42,5 +44,9 @@ export class DinerMenu {
 
   public getMenuItems(): Set<MenuItem> {
     return this.menuItems;
+  }
+
+  public createIterator(): Iterator {
+    return new DinerMenuIterator(this.menuItems);
   }
 }

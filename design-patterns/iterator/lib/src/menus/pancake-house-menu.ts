@@ -1,3 +1,5 @@
+import { Iterator } from "../interfaces";
+import { PancakeHouseMenuIterator } from "../iterators/pancake-house-menu-iterator";
 import { MenuItem } from "./menu-item";
 
 export class PancakeHouseMenu {
@@ -42,5 +44,9 @@ export class PancakeHouseMenu {
 
   public getMenuItems(): MenuItem[] {
     return this.menuItems;
+  }
+
+  public createIterator(): Iterator {
+    return new PancakeHouseMenuIterator(this.menuItems);
   }
 }

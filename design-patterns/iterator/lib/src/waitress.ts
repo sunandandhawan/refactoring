@@ -1,5 +1,6 @@
-import { DinerMenu } from "./diner-menu";
-import { PancakeHouseMenu } from "./pancake-house-menu";
+import { Iterator } from "./interfaces";
+import { DinerMenu } from "./menus/diner-menu";
+import { PancakeHouseMenu } from "./menus/pancake-house-menu";
 
 export class Waitress {
   private _pancakeHouseMenu: PancakeHouseMenu;
@@ -11,18 +12,18 @@ export class Waitress {
   }
 
   public printMenu() {
-    const breakfastItems = this._pancakeHouseMenu.getMenuItems();
-    const lunchItems = this._dinerMenu.getMenuItems();
+    const pancakeIterator = this._pancakeHouseMenu.createIterator();
+    const dinerIterator = this._dinerMenu.createIterator();
 
-    for (let i = 0; i < breakfastItems.length; i++) {
-      const item = breakfastItems[i];
-      console.log(item.getName());
-      console.log("  " + item.getDescription());
-      console.log("  $ " + item.getPrice());
-    }
+    console.log("MENU\n----\nBREAKFAST\n----");
+    this.print(pancakeIterator);
+    console.log("----\nLUNCH----");
+    this.print(dinerIterator);
+  }
 
-    for (let i = 0; i < lunchItems.size; i++) {
-      const item = [...lunchItems][i];
+  private print(iterator: Iterator) {
+    while(iterator.hasNext()) {
+      const item = iterator.next();
       console.log(item.getName());
       console.log("  " + item.getDescription());
       console.log("  $ " + item.getPrice());
